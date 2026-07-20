@@ -1,77 +1,58 @@
-# TIM Compression and Squeeze-Out Model
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/bjornhbengtsson/TIM-Compression-Model/blob/main/TIM_Compression_Model.ipynb)
 
-A shareable engineering notebook for estimating:
+## Model scope
 
-- Average pressure at each thermal-interface-material (TIM) interface
-- Compression strain and displacement
-- TIM volume retained inside the intended contact footprint
-- Approximate squeeze-out volume
-- Equivalent spread area under a volume-conservation assumption
-- Sensitivity to applied clamp force
+This model calculates average interface pressure, compression geometry,
+TIM volume displacement, and idealized squeeze-out under an approximate
+volume-conservation assumption.
 
-## Current stack
+It does not predict final bondline thickness from applied force unless
+material-specific compression data or experimental measurements are supplied.
 
-| Interface | Material | Area (in²) | Initial BLT (in) | Target BLT (in) |
-|---|---|---:|---:|---:|
-| Die | Parker Chomerics THERM-A-GAP GEL 8010 | 0.300 | 0.010 | 0.005 |
-| Copper spreader | Parker Chomerics THERM-A-GAP GEL 75 | 1.400 | 0.040 | 0.025 |
+Results should be validated using a controlled compression fixture before
+being used for production design decisions.
 
-Applied clamp force: **4 lbf**
+## Baseline configuration
 
-## Important scope limitation
+| Interface | Material | Area | Initial BLT | Target BLT | Average pressure |
+|---|---|---:|---:|---:|---:|
+| Die | GEL 8010 | 0.300 in² | 0.010 in | 0.005 in | 13.33 psi |
+| Copper spreader | GEL 75 | 1.400 in² | 0.040 in | 0.025 in | 2.86 psi |
 
-This Version 1 model calculates average pressure and geometric squeeze-out. It does **not** prove that a given pressure will produce a specific final bondline thickness. That prediction requires material-specific compression/deflection or rheology data, or physical test measurements.
+Applied load: **4 lbf**
 
-## Run locally
+### Baseline assumptions
 
-```bash
-python -m venv .venv
-source .venv/Scripts/activate
-python -m pip install --upgrade pip
-pip install -r requirements.txt
-jupyter lab
-```
+- No load bypass
+- Same resultant force through both interfaces
+- Flat and parallel contact surfaces
+- Approximately incompressible TIM for geometric volume calculations
+- Static and centered applied load
+- Average pressure rather than local pressure distribution
 
-Then open:
+## Example output
 
-```text
-TIM_Compression_Model.ipynb
-```
+### Average interface pressure
 
-## Run in Google Colab
+![Average interface pressure](figures/generated/average_interface_pressure.png)
 
-Upload `TIM_Compression_Model.ipynb` to Google Colab, or open it from the GitHub repository after the repository is published.
+### Pressure sensitivity to clamp force
 
-## Repository structure
+![Pressure versus clamp force](figures/generated/pressure_vs_force.png)
 
-```text
-tim-compression-model/
-├── README.md
-├── TIM_Compression_Model.ipynb
-├── requirements.txt
-├── LICENSE
-├── .gitignore
-├── create_project.sh
-├── data/
-│   ├── material_properties.csv
-│   └── experimental_results.csv
-├── docs/
-│   ├── assumptions.md
-│   └── validation_plan.md
-├── figures/
-│   └── README.md
-└── references/
-    └── README.md
-```
+### Initial and target bondline thickness
 
-## Suggested development sequence
+![Bondline thickness comparison](figures/generated/bondline_thickness.png)
 
-1. Run the baseline model.
-2. Verify the geometry, areas, and force path.
-3. Add measured bondline-thickness data.
-4. Fit an empirical pressure-to-thickness curve only after enough measurements exist.
-5. Tag the first validated release as `v1.0`.
+### Retained and displaced TIM volume
 
-## License
+![TIM volume comparison](figures/generated/tim_volume.png)
 
-MIT License. Replace the placeholder copyright name in `LICENSE`.
+## Sharing statement
+
+This repository contains a Jupyter-based TIM compression and squeeze-out
+model for the current die and copper-spreader stack. It calculates average
+pressure, compression geometry, displaced volume, and force sensitivity.
+
+The current version is a geometric model. Material-specific
+pressure-to-bondline behavior still requires experimental validation.

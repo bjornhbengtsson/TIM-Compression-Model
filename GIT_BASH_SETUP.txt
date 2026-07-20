@@ -1,0 +1,32 @@
+Git Bash setup commands
+
+1. Open Git Bash.
+2. Go to the folder that contains this project:
+
+   cd ~/Documents/tim-compression-model
+
+3. Make the helper executable:
+
+   chmod +x create_project.sh
+
+4. Run it:
+
+   ./create_project.sh
+
+5. Start Jupyter:
+
+   jupyter lab
+
+6. In the browser, open:
+
+   TIM_Compression_Model.ipynb
+
+GitHub setup after reviewing the files:
+
+   git add .
+   git commit -m "Initial TIM compression and squeeze-out model"
+
+Create an empty GitHub repository named tim-compression-model, then run:
+
+   git remote add origin https://github.com/YOUR-USERNAME/tim-compression-model.git
+   git push -u origin main

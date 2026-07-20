@@ -1,0 +1,3 @@
+material,interface,user_color_label,datasheet_color,thermal_conductivity_W_mK,specific_gravity,typical_min_bondline_in,cte_ppm_K,operating_temp_min_C,operating_temp_max_C,source
+THERM-A-GAP GEL 8010,Die,White,White,3.0,2.7,0.002,150,-55,200,Parker Chomerics THERM-A-GAP Thermally Conductive Gels datasheet
+THERM-A-GAP GEL 75,Copper spreader,Blue,Light Grey,7.5,3.4,0.008,150,-55,200,Parker Chomerics THERM-A-GAP GEL 75 datasheet

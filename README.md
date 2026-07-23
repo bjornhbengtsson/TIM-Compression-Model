@@ -7,6 +7,10 @@ This project evaluates the compression of two thermal interface material (TIM) l
 1. A thin **die bondline TIM** between the processor die and the copper heat spreader.
 2. A thicker **spreader TIM** between the copper heat spreader and aluminum.
 
+<img width="4032" height="3024" alt="IMG_6757" src="https://github.com/user-attachments/assets/1db9bb50-834d-4e15-915d-e70eb5831583" />
+<img width="4032" height="3024" alt="IMG_6755" src="https://github.com/user-attachments/assets/456ee0bc-505c-4ff0-9aba-3f9f52957bc9" />
+
+
 Although the two interfaces carry the same approximately **4 lbf compressive load**, their contact areas are significantly different:
 
 | Interface | Contact area | Initial BLT | Target BLT |

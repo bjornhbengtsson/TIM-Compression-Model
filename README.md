@@ -11,9 +11,9 @@ This project evaluates the compression of two thermal interface material (TIM) l
 <img width="4032" height="3024" alt="IMG_6755" src="https://github.com/user-attachments/assets/456ee0bc-505c-4ff0-9aba-3f9f52957bc9" />
 
 
-Although the two interfaces carry the same approximately **4 lbf compressive load**, their contact areas are significantly different:
+Although the two TIMs carry the same approximately **4 lbf compressive load**, their contact areas are significantly different:
 
-| Interface | Contact area | Initial BLT | Target BLT |
+| Interfaces | Contact area | Initial BLT | Target BLT |
 |---|---:|---:|---:|
 | Processor die / copper spreader | 0.300 in² | 0.010 in | 0.005 in |
 | Copper spreader / aluminum | 1.400 in² | 0.040 in | 0.025 in |
